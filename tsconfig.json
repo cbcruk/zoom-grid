@@ -1,0 +1,7 @@
+{
+  "files": [],
+  "references": [
+    { "path": "./packages/zoom-grid-ui" },
+    { "path": "./apps/demo" }
+  ]
+}
