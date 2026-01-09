@@ -10,6 +10,10 @@
       "types": "./dist/src/index.d.ts",
       "development": "./src/index.ts",
       "default": "./dist/index.js"
+    },
+    "./styles.css": {
+      "development": "./src/styles.css",
+      "default": "./dist/index.css"
     }
   },
   "files": [
