@@ -1,5 +1,5 @@
 {
-  "name": "@zoom-grid/demo",
+  "name": "zoom-grid-demo",
   "version": "0.0.0",
   "private": true,
   "type": "module",
@@ -9,7 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@zoom-grid/ui": "workspace:*",
+    "zoom-grid": "link:../..",
     "react": "^19.2.0",
     "react-dom": "^19.2.0"
   },

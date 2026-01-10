@@ -1,43 +1,20 @@
-# ZoomGrid
+# zoom-grid
+
+[![npm version](https://img.shields.io/npm/v/zoom-grid.svg)](https://www.npmjs.com/package/zoom-grid)
 
 Pinch-to-zoom grid component for React with smooth transitions between zoom levels.
 
-## Structure
-
-```
-packages/
-  zoom-grid-ui/     # @zoom-grid/ui - Core component library
-apps/
-  demo/             # @zoom-grid/demo - Demo application
-```
-
-## Development
+## Installation
 
 ```bash
-# Install dependencies
-pnpm install
-
-# Build UI package
-pnpm build:ui
-
-# Run demo app
-pnpm dev
+npm install zoom-grid
 ```
-
-## Scripts
-
-| Command           | Description             |
-| ----------------- | ----------------------- |
-| `pnpm dev`        | Run demo app dev server |
-| `pnpm build`      | Build all packages      |
-| `pnpm build:ui`   | Build UI package only   |
-| `pnpm build:demo` | Build demo app only     |
-| `pnpm preview`    | Preview demo build      |
 
 ## Usage
 
 ```tsx
-import { ZoomGrid } from '@zoom-grid/ui'
+import { ZoomGrid } from 'zoom-grid'
+import 'zoom-grid/styles.css'
 
 function App() {
   return (
@@ -54,8 +31,36 @@ function App() {
 }
 ```
 
-## Tech Stack
+## Props
 
-- @tanstack/react-virtual
-- @use-gesture/react
-- framer-motion
+| Prop | Type | Default | Description |
+| --- | --- | --- | --- |
+| `data` | `T[]` | required | Array of data items to display |
+| `renderItem` | `(props: RenderItemProps<T>) => ReactNode` | required | Function to render each grid item |
+| `zoomLevels` | `number[]` | `[5, 3, 1]` | Available zoom levels as column counts |
+| `initialNumColumns` | `number` | `3` | Initial number of columns |
+| `gap` | `number` | `2` | Gap between grid items in pixels |
+| `onZoomChange` | `(columns: number) => void` | - | Callback fired when zoom level changes |
+| `contentInsets` | `{ top?: number, bottom?: number }` | - | Content insets for padding |
+| `style` | `CSSProperties` | - | Custom styles for the container |
+
+### RenderItemProps
+
+| Prop | Type | Description |
+| --- | --- | --- |
+| `item` | `T` | The data item to render |
+| `index` | `number` | Index of the item in the data array |
+| `size` | `number` | Calculated size (width/height) of the item in pixels |
+| `isTarget` | `boolean` | Whether this item is the current zoom target |
+| `isPinching` | `MutableRefObject<boolean>` | Ref indicating whether a pinch gesture is in progress |
+
+## Features
+
+- Pinch-to-zoom gesture support
+- Ctrl+Scroll zoom on desktop
+- Smooth transitions between zoom levels
+- Virtualized rendering for large datasets
+
+## License
+
+MIT

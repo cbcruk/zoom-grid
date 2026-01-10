@@ -1,16 +1,32 @@
 {
-  "name": "zoom-grid-monorepo",
-  "private": true,
-  "version": "0.0.0",
+  "name": "zoom-grid",
+  "version": "0.0.1",
   "type": "module",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/src/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/src/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./styles.css": "./dist/index.css"
+  },
+  "files": [
+    "dist"
+  ],
   "scripts": {
-    "dev": "pnpm --filter @zoom-grid/demo dev",
-    "dev:ui": "pnpm --filter @zoom-grid/ui dev",
-    "build": "pnpm --filter @zoom-grid/ui build && pnpm --filter @zoom-grid/demo build",
-    "build:ui": "pnpm --filter @zoom-grid/ui build",
-    "build:demo": "pnpm --filter @zoom-grid/demo build",
-    "lint": "eslint .",
-    "preview": "pnpm --filter @zoom-grid/demo preview"
+    "build": "vite build && tsc",
+    "dev": "vite build --watch",
+    "lint": "eslint ."
+  },
+  "peerDependencies": {
+    "react": "^18.0.0 || ^19.0.0",
+    "react-dom": "^18.0.0 || ^19.0.0"
+  },
+  "dependencies": {
+    "@tanstack/react-virtual": "^3.13.13",
+    "@use-gesture/react": "^10.3.1"
   },
   "devDependencies": {
     "@eslint/js": "^9.39.1",
@@ -22,8 +38,16 @@
     "eslint-plugin-react-hooks": "^7.0.1",
     "eslint-plugin-react-refresh": "^0.4.24",
     "globals": "^16.5.0",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
     "typescript": "~5.9.3",
     "typescript-eslint": "^8.46.4",
     "vite": "^7.2.4"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ieunsu/zoom-grid.git"
+  },
+  "keywords": ["react", "grid", "zoom", "pan", "virtual", "virtualized"],
+  "license": "MIT"
 }

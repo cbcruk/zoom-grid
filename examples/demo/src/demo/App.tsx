@@ -1,5 +1,5 @@
 import { useState, useMemo } from 'react'
-import { ZoomGrid } from '@zoom-grid/ui'
+import { ZoomGrid } from 'zoom-grid'
 import styles from './App.module.css'
 
 interface ImageItem {
