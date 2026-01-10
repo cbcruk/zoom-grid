@@ -33,9 +33,15 @@ jobs:
 
       - run: pnpm build
 
+      - run: pnpm install --frozen-lockfile
+        working-directory: examples/demo
+
+      - run: pnpm build
+        working-directory: examples/demo
+
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: apps/demo/dist
+          path: examples/demo/dist
 
   deploy:
     needs: build
