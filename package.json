@@ -46,8 +46,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/ieunsu/zoom-grid.git"
+    "url": "https://github.com/cbcruk/zoom-grid.git"
   },
-  "keywords": ["react", "grid", "zoom", "pan", "virtual", "virtualized"],
+  "keywords": [
+    "react",
+    "grid",
+    "zoom",
+    "pan",
+    "virtual",
+    "virtualized"
+  ],
   "license": "MIT"
 }
